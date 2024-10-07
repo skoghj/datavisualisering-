@@ -10,7 +10,7 @@ import kortchart from "../assets/images/kortchart.svg";
 ---
 
 <MainLayout title="Datavisualisering">
-  <article class="flex flex-col mx-auto justify-center w-full md:max-w-3xl pt-20 container p-4 md:p-0">
+  <article class="flex flex-col mx-auto justify-center w-full md:max-w-3xl md:pt-20 container p-4 md:p-0">
     <div>
       <h1 class="text-[56px] leading-tight font-semibold">
         <span class="font-black">Vi har stadig pengesedler og mønter i pungen:</span>
@@ -20,25 +20,28 @@ import kortchart from "../assets/images/kortchart.svg";
     <p class="py-6 text-[24px] font-semibold">I landsdele med mange landkommuner ser Danmarks Nationalbank en tendens flere kontantbetalinger.</p>
     <img src="/src/assets/images/kontanter.jpeg" alt="kontanter billede" class="py-6" />
     <p>Det sker sjældnere, men vi klirrer stadig med mønter eller knitrer med sedler, når vi skal betale. Nationalbankens seneste borgerundersøgelse viser, at 11 procent af alle betalinger nu sker med kontanter. I 2017 gjaldt det 23 procent af alle betalinger. I stedet for kontanterne bruger vi primært betalingskort eller - i stigende grad - mobiltelefonen, når der skal betales, forklarer Marcus Clausen Brock, der er betalingsspecialist hos Danmarks Nationalbank.</p>
-    <div class="pt-2 pb-20">
+    <div class="pt-2 pb-10 md:pb-20">
       <div class="py-4">
-        <h3 class="font-bold">Andel af betalinger i kontanter (%)</h3>
-        <Image src={linjediagram} alt=" Andel af betalinger i kontanter (%)" class="" />
+        <h3 class="font-bold text-slate-700">Andel af betalinger i kontanter (%)</h3>
+        <Image src={linjediagram} alt=" Andel af betalinger i kontanter (%)" class="pt-2" />
       </div>
-      <div>
-        <h3 class="font-bold">Andel af digitale betalinger i danske regioner (i %)</h3>
+      <div class="pt-6">
+        <h3 class="font-bold text-slate-700">Andel af digitale betalinger i danske regioner (i %)</h3>
         <Image src={kortchart} alt="Andel af digitale betalinger i danske regioner (i %)" class="w-[550px]" />
       </div>
     </div>
   </article>
-  <article class="flex flex-col mx-auto justify-center max-w-3xl pt-8 container p-4 md:p-0">
+  <article class="flex flex-col mx-auto justify-center w-full md:max-w-3xl md:pt-10 container p-4 md:p-0">
     <h2 class="font-bold text-[20px] pb-2">Så ofte betaler danskerne kontant</h2>
     <p>I gennemsnit betaler danskerne kontant ved hver niende betaling.</p>
     <p>Det er både unge og gamle, som fra tid til anden tager kontanter op af lommen. - Man kunne måske have tænkt, at de ældre bruger kontanter mere end resten af befolkningen, men det ser vi altså ikke i undersøgelsen, siger Marcus Clausen Brock.</p>
-    <div class="flex flex-col pt-10 pb-6 w-[600px]">
-      <div><h3 class="font-bold">Gennemsnitlig fordeling af kontant- og digitale betalinger</h3> <Image src={cirkeldiagram} alt="Gennemsnitlig fordeling af kontant- og digitale betalinger" class="" /></div>
+    <div class="flex flex-col pt-10 pb-6">
       <div>
-        <h3 class="font-bold">Fordeling af kontant- og digitale betalinger i danske regioner (i %)</h3><Image src={sojlediagram} alt="Fordeling af kontant- og digitale betalinger i danske regioner (i %)" class="" />
+        <h3 class="font-bold text-slate-700">Gennemsnitlig fordeling af kontant- og digitale betalinger</h3>
+        <Image src={cirkeldiagram} alt="Gennemsnitlig fordeling af kontant- og digitale betalinger" class="w-[550px]" />
+      </div>
+      <div class="pb-6">
+        <h3 class="font-bold text-slate-700">Fordeling af kontant- og digitale betalinger i danske regioner (i %)</h3><Image src={sojlediagram} alt="Fordeling af kontant- og digitale betalinger i danske regioner (i %)" class="w-[550px]" />
       </div>
     </div>
   </article>
