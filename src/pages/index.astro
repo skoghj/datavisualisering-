@@ -1,15 +1,56 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import cirkeldiagram from "../assets/images/cirkel.svg";
+import sojlediagram from "../assets/images/sojlediagram.svg";
+import linjediagram from "../assets/images/linje.svg";
+import kortchart from "../assets/images/kortchart.svg";
 ---
-<MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+
+<MainLayout title="Datavisualisering">
+  <article class="flex flex-col mx-auto justify-center w-full md:max-w-3xl pt-20 container p-4 md:p-0">
+    <div>
+      <h1 class="text-[56px] leading-tight font-semibold">
+        <span class="font-black">Vi har stadig pengesedler og mønter i pungen:</span>
+        Se, hvor i landet vi oftest bruger kontanter
+      </h1>
+    </div>
+    <p class="py-6 text-[24px] font-semibold">I landsdele med mange landkommuner ser Danmarks Nationalbank en tendens flere kontantbetalinger.</p>
+    <img src="/src/assets/images/kontanter.jpeg" alt="kontanter billede" class="py-6" />
+    <p>Det sker sjældnere, men vi klirrer stadig med mønter eller knitrer med sedler, når vi skal betale. Nationalbankens seneste borgerundersøgelse viser, at 11 procent af alle betalinger nu sker med kontanter. I 2017 gjaldt det 23 procent af alle betalinger. I stedet for kontanterne bruger vi primært betalingskort eller - i stigende grad - mobiltelefonen, når der skal betales, forklarer Marcus Clausen Brock, der er betalingsspecialist hos Danmarks Nationalbank.</p>
+    <div class="pt-2 pb-20">
+      <div class="py-4">
+        <h3 class="font-bold">Andel af betalinger i kontanter (%)</h3>
+        <Image src={linjediagram} alt=" Andel af betalinger i kontanter (%)" class="" />
+      </div>
+      <div>
+        <h3 class="font-bold">Andel af digitale betalinger i danske regioner (i %)</h3>
+        <Image src={kortchart} alt="Andel af digitale betalinger i danske regioner (i %)" class="w-[550px]" />
+      </div>
+    </div>
+  </article>
+  <article class="flex flex-col mx-auto justify-center max-w-3xl pt-8 container p-4 md:p-0">
+    <h2 class="font-bold text-[20px] pb-2">Så ofte betaler danskerne kontant</h2>
+    <p>I gennemsnit betaler danskerne kontant ved hver niende betaling.</p>
+    <p>Det er både unge og gamle, som fra tid til anden tager kontanter op af lommen. - Man kunne måske have tænkt, at de ældre bruger kontanter mere end resten af befolkningen, men det ser vi altså ikke i undersøgelsen, siger Marcus Clausen Brock.</p>
+    <div class="flex flex-col pt-10 pb-6 w-[600px]">
+      <div><h3 class="font-bold">Gennemsnitlig fordeling af kontant- og digitale betalinger</h3> <Image src={cirkeldiagram} alt="Gennemsnitlig fordeling af kontant- og digitale betalinger" class="" /></div>
+      <div>
+        <h3 class="font-bold">Fordeling af kontant- og digitale betalinger i danske regioner (i %)</h3><Image src={sojlediagram} alt="Fordeling af kontant- og digitale betalinger i danske regioner (i %)" class="" />
+      </div>
+    </div>
+  </article>
+  <article class="flex flex-col mx-auto justify-center max-w-3xl pt-10 container p-4 md:p-0">
+    <h2 class="font-bold text-[20px] pb-2">En halv million har det svært med digitale løsninger</h2>
+    <p>Mindst en halv million danskere har svært ved det med passwords, login og MitID, forklarer professor Jonas Hedman fra CBS, der forsker i konsekvenserne af digitaliseringen. Det er især MitID, den er gal med, mener han. - De forstår ikke logikken, forklarer han.</p>
+    <p class="pb-6">Jonas Hedman mener, at det er en samfundsopgave at redesigne MitID - og generelt sørge for at lave digitale platforme, som er lettere at bruge for alle. - Vi skal sørge for, at de, der har det svært med digitaliseringen, kan fungere på en god måde, siger han. CBS er blandt andet i gang med at udvikle en stemmestyret betalingsapp, hvor brugeren kan betale med sin stemme. Det sker i et samarbejde med SUMH, som er en organisation for yngre med handicap, et tysk designfirma og Finans Danmark.</p>
+
+    <h2 class="font-bold text-[20px] pb-2">Så stor værdi betaler vi kontant</h2>
+    <p class="pb-6">Hvis man ser på værdien af vores betalinger - altså hvor meget vi betaler i kroner og ører - så udgør kontanter en ellevtedel af værdien.</p>
+
+    <h2 class="font-bold text-[20px] pb-2">Vi bliver ved med at bruge pengesedler og mønter i fremtiden</h2>
+    <p class="pb-20">1000-kronesedlen og alle sedler i serierne fra 1944, 1952, 1972 og 1997 bliver ugyldige ved udgangen af maj 2025. Men uanset at digitaliseringen vinder frem, så er vurderingen fra Danmarks Nationalbank, at de resterende pengesedler og mønter ikke på vej til helt at forsvinde. - Vi ser ikke for os, at vi bliver kontantfri i Danmark. Kontanter har særlige egenskaber, som flere borgere værdsætter, for eksempel at de er håndgribelige, siger betalingsspecialist Marcus Clausen Brock.</p>
+  </article>
 </MainLayout>
